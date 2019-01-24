@@ -9,6 +9,7 @@ import {ActivatedRoute, Params} from '@angular/router';
 export class ProductComponent implements OnInit {
 
   private productId: number;
+  private productName: string;
 
   constructor(private routInfo: ActivatedRoute) { }
 
@@ -17,6 +18,14 @@ export class ProductComponent implements OnInit {
     // this.productId = this.routInfo.snapshot.params['id']; // 获取通过路由传参
 
     this.routInfo.params.subscribe((params: Params) => this.productId = params['id']);
+    this.routInfo.data.subscribe((data: {product: Product}) => {
+      this.productId = data.product.id;
+      this.productName = data.product.name;
+    });
   }
 
+}
+
+export class Product {
+  constructor(public id: number, public name: string) {}
 }

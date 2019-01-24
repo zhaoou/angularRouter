@@ -1,6 +1,15 @@
-<a [routerLink]="['/']">主页</a>
-<!--<a [routerLink]="['/product']" [queryParams]="{id:1}">商品详情</a>-->
-<a [routerLink]="['/product', 1]">商品详情</a>
-<input type="button" value="商品详情" (click)="toProductDetails()">
-<router-outlet></router-outlet>
-<router-outlet name="aux"></router-outlet>
+<div>
+  <a [routerLink]="['/']">主页</a>
+  <!--<a [routerLink]="['/product']" [queryParams]="{id:1}">商品详情</a>-->
+  <a [routerLink]="['/product', 1]">商品详情</a>
+  <input type="button" value="商品详情" (click)="toProductDetails()">
+
+  <!--辅助路由链接-->
+  <a [routerLink]="[{outlets: {primary:'home', aux: 'chat'}}]">Start Chat</a>
+  <a [routerLink]="[{outlets: {aux: null}}]">End Chat</a>
+
+</div>
+<div>
+  <router-outlet></router-outlet>
+  <router-outlet name="aux"></router-outlet>
+</div>
