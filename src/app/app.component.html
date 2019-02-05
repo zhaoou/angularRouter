@@ -13,3 +13,24 @@
   <router-outlet></router-outlet>
   <router-outlet name="aux"></router-outlet>
 </div>
+
+
+<!--<div>-->
+  <!--组件间通讯练习： 我是父组件-->
+<!--</div>-->
+<!--<div>-->
+  <!--<input type="text" placeholder="请输入股票代码" [(ngModel)]="stock">-->
+  <!--<app-order [stockCode] = 'stock' [amount] = '100'></app-order> &lt;!&ndash; 父组件给子组件传值 &ndash;&gt;-->
+<!--</div>-->
+
+<div>
+  <app-price-quote (buy)="buyHandler($event)"></app-price-quote> <!-- 子组件给父组件传值   (lastPrice)="priceQuoteHandler($event)" -->
+</div>
+<!--<div>-->
+  <!--这是在报价组件外部， 股票代码是{{priceQuote.stockCode}},-->
+  <!--股票价格是{{priceQuote.lastPrice | number: '2.2-2'}}-->
+<!--</div>-->
+
+<div>
+  <app-order [priceQuote]="priceQuote"></app-order><!-- 父组件给子组件传值 -->
+</div>

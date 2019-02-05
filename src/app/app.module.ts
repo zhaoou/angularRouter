@@ -9,6 +9,9 @@ import { Code404Component } from './code404/code404.component';
 import { ProductDescComponent } from './product-desc/product-desc.component';
 import { SellerInfoComponent } from './seller-info/seller-info.component';
 import { ChatComponent } from './chat/chat.component';
+import { OrderComponent } from './order/order.component';
+import {FormsModule} from '@angular/forms';
+import { PriceQuoteComponent } from './price-quote/price-quote.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { ChatComponent } from './chat/chat.component';
     Code404Component,
     ProductDescComponent,
     SellerInfoComponent,
-    ChatComponent
+    ChatComponent,
+    OrderComponent,
+    PriceQuoteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
