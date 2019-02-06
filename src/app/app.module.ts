@@ -12,6 +12,7 @@ import { ChatComponent } from './chat/chat.component';
 import { OrderComponent } from './order/order.component';
 import {FormsModule} from '@angular/forms';
 import { PriceQuoteComponent } from './price-quote/price-quote.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PriceQuoteComponent } from './price-quote/price-quote.component';
     SellerInfoComponent,
     ChatComponent,
     OrderComponent,
-    PriceQuoteComponent
+    PriceQuoteComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

@@ -34,3 +34,20 @@
 <div>
   <app-order [priceQuote]="priceQuote"></app-order><!-- 父组件给子组件传值 -->
 </div>
+
+
+<!--<app-child #child1></app-child>-->
+<!--<app-child #child2></app-child>-->
+<!--<button (click)="child2.greeting('Jerry')">调用child2的greeting方法</button>-->
+<!--{{message}}-->
+
+<div class="wrapper">
+  <h2>我是父组件</h2>
+  <div>这个div定义在父组件中</div>
+  <app-child>
+    <div class="header">这是页头，这个div是父组件投影到子组件的, title是{{title}}</div>
+    <div class="footer">这是页脚，这个div是父组件投影到子组件的</div>
+  </app-child>
+</div>
+
+<div [innerHtml]="divContent"></div>
